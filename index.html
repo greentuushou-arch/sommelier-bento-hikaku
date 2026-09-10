@@ -209,8 +209,10 @@
     padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;
   }
   table.compare td:nth-child(2),
+  table.compare td:nth-child(3),
   table.compare td:nth-child(4),
   table.compare td:nth-child(5),
+  table.compare td:nth-child(6),
   table.compare td:nth-child(9){white-space:nowrap}
   table.compare thead th{
     background:var(--ink);color:var(--paper);
@@ -349,7 +351,7 @@
   /* ---------- responsive ---------- */
   @media (max-width:860px){
     .fv-grid{grid-template-columns:1fr}
-    .fv-art{grid-row:1;width:min(220px,60%)}
+    .fv-art{width:min(170px,46%);justify-self:start;margin-top:4px}
     .nav-row{grid-template-columns:1fr;gap:.3em}
     .item{grid-template-columns:1fr}
     .item-media{max-width:320px}
@@ -876,6 +878,13 @@
   // ---------- 比較表 ----------
   var body = document.getElementById("cmpBody");
   function freezeCell(v){return v==="○" ? '<span class="t-yes">○</span>' : '<span class="t-no">—</span>';}
+  var DIV_SHORT = {
+    "仕切り板つき":"仕切り板","各仕切り板つき":"仕切り板×2","各段に仕切りつき":"各段あり",
+    "可動仕切りつき":"可動仕切り","ザル（ごはん段）":"ザル付き","なし":"なし"
+  };
+  var CAP_SHORT = {
+    "400mL ×2段":"400mL×2","230mL ×2個":"230mL×2","ごはん380mL＋おかず段":"380mL＋おかず","ごはん530mL＋おかず段":"530mL＋おかず"
+  };
   function buildRows(list){
     body.innerHTML="";
     list.forEach(function(p){
@@ -885,10 +894,10 @@
       tr.innerHTML =
         '<th scope="row">'+esc(p.short)+'<span class="t-code">'+esc(p.id)+'</span></th>'+
         '<td>'+esc(p.type)+'</td>'+
-        '<td class="t-num">'+esc(p.capText)+'</td>'+
+        '<td class="t-num">'+esc(CAP_SHORT[p.capText] || p.capText)+'</td>'+
         '<td class="t-num">'+esc(p.sizeShort || p.size.split("／")[0].replace(/cm.*$/,"").trim())+'</td>'+
         '<td>'+esc(p.weightShort || p.weight)+'</td>'+
-        '<td>'+esc(p.divider)+'</td>'+
+        '<td>'+esc(DIV_SHORT[p.divider] || p.divider)+'</td>'+
         '<td>'+freezeCell(p.freezer)+'</td>'+
         '<td class="t-price">'+esc(p.priceText)+'</td>'+
         '<td>'+esc(p.ship)+'</td>'+
