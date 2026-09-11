@@ -129,21 +129,35 @@
   }
   .sec-head p{color:var(--sub);max-width:40em;font-size:.98rem}
 
-  /* ---------- 共通仕様 callout ---------- */
+  /* ---------- 共通仕様 ---------- */
   .common{
     background:var(--paper-2);
     border:1px solid var(--line);
-    padding:clamp(22px,3.4vw,34px);
+    padding:clamp(24px,4vw,44px);
   }
-  .common h3{
-    font-family:"Shippori Mincho",serif;
-    font-weight:700;
-    font-size:1.14rem;
-    margin-bottom:.7em;
+  .common-lead{
+    font-family:"Shippori Mincho",serif;font-weight:700;
+    font-size:clamp(1.02rem,1.7vw,1.2rem);margin-bottom:1em;
   }
-  .common ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.4em 1.8em}
-  .common li{position:relative;padding-left:1.1em;font-size:.95rem;color:var(--ink)}
-  .common li::before{content:"";position:absolute;left:0;top:.82em;width:.5em;height:.5em;background:var(--accent);border-radius:50%}
+  .common-big{list-style:none;display:flex;flex-wrap:wrap;row-gap:.5em}
+  .common-big li{
+    font-family:"Shippori Mincho",serif;font-weight:800;
+    font-size:clamp(1.1rem,2.3vw,1.6rem);line-height:1.25;
+    padding:0 clamp(.7em,1.6vw,1.1em);
+    border-left:2px solid var(--accent);
+  }
+  .common-big li:first-child{padding-left:0;border-left:none}
+  .common-note{margin-top:1.3em;font-size:.9rem;color:var(--sub);max-width:44em}
+
+  .bridge{
+    margin:clamp(36px,6vw,64px) auto 0;max-width:40em;text-align:center;
+  }
+  .bridge-q{
+    font-family:"Shippori Mincho",serif;font-weight:800;
+    font-size:clamp(1.5rem,3.4vw,2.2rem);margin-bottom:.55em;
+  }
+  .bridge-a{font-size:1.02rem;line-height:2}
+  .bridge-a b{color:var(--accent-deep);font-weight:700}
 
   /* ---------- 選び方ナビ ---------- */
   .nav-list{border-top:1px solid var(--line-strong)}
@@ -374,10 +388,10 @@
   <div class="wrap fv-grid">
     <div>
       <span class="eyebrow">山崎実業 tower ／ 家具のソムリエ</span>
-      <h1>お弁当箱は、<br>「<span class="mark">サイズ感</span>」で選ぶ。</h1>
+      <h1>機能はぜんぶ同じ。<br>だから「<span class="mark">サイズ感</span>」で選ぶ。</h1>
       <p class="fv-lead">
-        tower のバルブ付き密閉ランチボックス10ページ分を、<strong>容量・外寸・特徴・使い方・価格</strong>でならべて比較しました。
-        「同じ中身が別ページ・別セットでも買える」ややこしいポイントも、最後にまとめて整理しています。
+        tower のバルブ付き密閉ランチボックス10ページ分を、<strong>容量・寸法・形・使い方・価格</strong>でならべて比較しました。
+        「同じ中身が、別のページでも買える」——少し分かりにくいところも最後にまとめていますので、あわせてご覧ください。
       </p>
       <div class="fv-meta">
         <span>全10ページを比較</span>
@@ -406,22 +420,23 @@
   <section id="common">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="eyebrow">First, the basics</span>
-        <h2>10種すべてに共通していること</h2>
-        <p>tower の密閉ランチボックスは基本設計が共通です。だから選ぶときは「大きさ」「段数」「形」「価格」の違いだけを見れば決まります。</p>
+        <span class="eyebrow">First, the good news</span>
+        <h2>tower のお弁当箱は、<br>機能で迷う必要がありません。</h2>
       </div>
       <div class="common reveal">
-        <h3>どれを選んでも共通の仕様</h3>
-        <ul>
-          <li>バルブをプッシュするだけで簡単に密閉</li>
-          <li>パッキン付きで汁もれに配慮した構造</li>
-          <li>ふたをしたまま電子レンジで加熱OK</li>
-          <li>食洗機OK（食器洗い乾燥機対応）</li>
-          <li>パーツは全て分解して丸洗いできる</li>
-          <li>カラーはホワイト／ブラックの2色</li>
-          <li>素材はポリプロピレン＋シリコーン</li>
-          <li>山崎実業 tower の白黒ミニマルデザイン</li>
+        <p class="common-lead">10種類すべてが、この5つを標準で備えています。</p>
+        <ul class="common-big">
+          <li>密閉バルブ</li>
+          <li>ふたのままレンジ</li>
+          <li>食洗機OK</li>
+          <li>分解してまる洗い</li>
+          <li>ホワイト／ブラック 2色</li>
         </ul>
+        <p class="common-note">さらに、パッキンで汁もれに配慮した構造／素材はポリプロピレン＋シリコーン／どれを選んでも山崎実業 tower の白黒ミニマルなデザインでそろいます。</p>
+      </div>
+      <div class="bridge reveal">
+        <p class="bridge-q">では、何で選べばいい？</p>
+        <p class="bridge-a">答えは<b>サイズ感</b>です。「どれだけ入るか（容量）」「どんな形か（寸法）」、そして<b>カバンにすっと入るか</b>。<br>この特集は、その3つを目で見て比べられるようにつくりました。</p>
       </div>
     </div>
   </section>
@@ -431,8 +446,8 @@
     <div class="wrap-narrow">
       <div class="sec-head reveal">
         <span class="eyebrow">Quick guide</span>
-        <h2>まず、使い方から絞り込む</h2>
-        <p>容量のめやすは、小食・サブ用途で200〜400mL、一般的な大人で500〜700mL、しっかり食べる中高生・男性で700〜900mL。</p>
+        <h2>使い方から、しぼり込む</h2>
+        <p>容量のめやすは、小食・サブ用途で200〜400mL、一般的な大人で500〜700mL、しっかり食べる中高生・男性で700〜900mL。あわせて「形」と「カバンへの入れやすさ」も見ておくと失敗しません。</p>
       </div>
       <dl class="nav-list reveal">
         <div class="nav-row">
@@ -445,15 +460,19 @@
         </div>
         <div class="nav-row">
           <dt>ごはんとおかずを分けたい</dt>
-          <dd><b>2段スリム（400×2）</b>・<b>冷凍ごはんセット S／L</b>。カバンに縦差ししたいなら2段スリム。</dd>
+          <dd><b>2段スリム（400×2）</b>・<b>冷凍ごはんセット S／L</b>。段で完全に分けたい人向け。</dd>
+        </div>
+        <div class="nav-row">
+          <dt>カバンにすっきり入れたい</dt>
+          <dd><b>2段スリム（幅18.3×奥行6.1cm）</b>は断面がうすく、すき間に縦差しできます。<b>スクエア（9.2cm角）</b>や<b>おにぎりケース</b>のように面積の小さいものも、荷物の多い日に収まりやすい形です。</dd>
         </div>
         <div class="nav-row">
           <dt>おにぎり派</dt>
-          <dd><b>おにぎりケース（230mL）</b>。1個ページと2個組ページがあり、2個以上なら2個組が得。</dd>
+          <dd><b>おにぎりケース（230mL）</b>。1個ページと2個組ページがあり、2個以上なら2個組がお得です。</dd>
         </div>
         <div class="nav-row">
           <dt>冷凍ごはんをそのままお弁当に</dt>
-          <dd><b>冷凍ごはんセット S／L</b>。ザル付き容器で水分を落としてべたつき防止。蒸し調理にも使えます。</dd>
+          <dd><b>冷凍ごはんセット S／L</b>。ザル付き容器で水分を落としてべたつきを防ぎます。蒸し調理にも使えます。</dd>
         </div>
       </dl>
     </div>
@@ -465,19 +484,19 @@
       <div class="sec-head reveal">
         <span class="eyebrow">See the scale</span>
         <h2>大きさと容量を、目で比べる</h2>
-        <p>カタログの数字だけだと「サイズ感」はつかみにくいもの。上から見たときの外寸と、容量のめやすを同じ縮尺でならべました。</p>
+        <p>数字だけだと「サイズ感」はつかみにくいもの。上から見たときの外寸と、容量のめやすを同じ縮尺でならべました。カバンに入るかどうかも、この面積と厚みでイメージできます。</p>
       </div>
 
       <div class="viz-block reveal">
         <h3>上から見た大きさ（外寸 幅 × 奥行）</h3>
-        <p class="note">グレーの面積が置き場所のイメージ。破線は2個組・2点セットで形が2種類あるもの。</p>
+        <p class="note">グレーの面積が、置いたときに占めるスペースの目安です。破線は、2個組・2点セットで形が2種類あるものです。細長い「2段スリム」は面積が小さく、すき間に収まりやすい形です。</p>
         <div class="foot-scale" id="footScale"></div>
         <div class="ruler"><span class="bar" style="width:96px"></span>= 10cm</div>
       </div>
 
       <div class="viz-block reveal">
         <h3>容量のめやす</h3>
-        <p class="note">1段ものは実容量。2段・セットものは「1段目＋2段目」。ハッチ部分は数値非公表のおかず段です。</p>
+        <p class="note">バーの長さが容量のめやすです。うすい色の部分は「2段目」や「2個目」にあたります。冷凍ごはんセットのおかず段は容量が公表されていないため、目安として短めに表示しています。</p>
         <div class="cap-chart" id="capChart"></div>
       </div>
     </div>
@@ -538,9 +557,9 @@
   <section id="combo">
     <div class="wrap-narrow">
       <div class="sec-head reveal">
-        <span class="eyebrow">Read before you buy</span>
-        <h2>「同じ中身が、別ページで買える」の整理</h2>
-        <p>tower のランチボックスは、単品ページ・個数違い・セット組みで同じ容器が何度も登場します。買う前に関係を把握しておくと迷いません。</p>
+        <span class="eyebrow">A quick heads-up</span>
+        <h2>「同じ中身が、別のページでも買える」ので<br>ここだけ整理しました</h2>
+        <p>tower のお弁当箱は、単品ページ・個数違い・セット組みで、同じ容器がいくつかのページに登場します。買ったあとで「こっちの方がよかったかも」とならないよう、関係をまとめました。購入前に、よければ目を通してみてください。</p>
       </div>
 
       <div class="combo">
@@ -550,7 +569,7 @@
             <li>単品ページ（ymj-00647）… 1個 880円／2個 1,760円を同じページで選択</li>
             <li>「長方形＋スクエア 2点セット」（ymj-00775）にも、同じスクエアが1個入っています</li>
           </ul>
-          <p class="verdict">スクエアだけを2個ほしいなら単品ページで「2個」を選ぶのが素直。<b>形違いで揃えたいときだけ</b>2点セットを見る、という順番です。</p>
+          <p class="verdict">スクエアだけを2個そろえたいときは、単品ページで「2個」を選ぶのがおすすめです。<b>形の違う2個をまとめて</b>ほしいときに、2点セットが便利です。</p>
         </div>
 
         <div class="combo-card reveal">
