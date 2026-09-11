@@ -115,8 +115,8 @@
   .bridge-a b{color:var(--red-deep);font-weight:700;white-space:nowrap}
 
   /* ---------- 診断アコーディオン ---------- */
-  .quiz{display:grid;gap:.7em}
-  .quiz-hint{font-size:.9rem;color:var(--sub);margin-bottom:.4em}
+  .quiz{display:grid;grid-template-columns:1fr 1fr;gap:.8em 1.4em;align-items:start}
+  .quiz-hint{grid-column:1 / -1;font-size:.9rem;color:var(--sub);margin-bottom:.4em}
   .q-item{border:1.5px solid var(--ink);background:var(--paper);transition:box-shadow .2s}
   .q-item.open{box-shadow:4px 4px 0 var(--red)}
   .q-head{
@@ -270,6 +270,7 @@
     .pick-row{grid-template-columns:1fr;gap:.15em}
     .cap-row{grid-template-columns:1fr;gap:.15em}
     .cap-row .cr-name{font-size:.82rem}
+    .quiz{grid-template-columns:1fr}
   }
   @media (max-width:560px){
     body{font-size:15px}
@@ -347,7 +348,7 @@
 
   <!-- かんたん診断 -->
   <section id="navi">
-    <div class="wrap-narrow">
+    <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">かんたん診断</span>
         <h2>使いかたから、しぼり込む</h2>
