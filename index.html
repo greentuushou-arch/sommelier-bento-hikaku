@@ -54,14 +54,16 @@
   .topbar-link{display:inline-flex;align-items:center;margin-top:9px;font-size:.82rem;font-weight:700;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:1px}
   .topbar-link::after{content:"";display:inline-block;margin-left:.5em;border-left:6px solid var(--red);border-top:4px solid transparent;border-bottom:4px solid transparent}
 
+  /* ---------- site header ---------- */
+  .site-head{border-bottom:1px solid var(--line);padding:14px 24px}
+  .site-head a{display:inline-block}
+  .site-head img{height:26px;width:auto;display:block}
+
   /* ---------- FV ---------- */
   .fv{padding:clamp(36px,7vw,72px) 0 0}
   .fv-inner{max-width:1120px;margin:0 auto;padding:0 24px}
-  .fv-word{
-    font-family:"Jost",sans-serif;font-weight:700;
-    font-size:clamp(3.4rem,13vw,8rem);line-height:.86;letter-spacing:-.01em;
-    margin:.18em 0 0;color:var(--ink);
-  }
+  .fv-word{margin:.22em 0 0}
+  .fv-word img{width:clamp(220px,42vw,460px);height:auto;display:block}
   .fv-kicker{font-weight:700;color:var(--sub);font-size:clamp(.95rem,1.8vw,1.15rem);margin-top:.9em}
   .fv h1{
     font-family:"Noto Sans JP",sans-serif;font-weight:900;
@@ -202,10 +204,10 @@
   .group-title .g-no{font-family:"Jost",sans-serif;color:#fff;background:var(--red);font-size:.9rem;padding:.2em .65em;letter-spacing:.02em;font-weight:600}
   .group-title h3{font-weight:900;font-size:clamp(1.2rem,2.6vw,1.6rem)}
 
-  .item{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(18px,4vw,44px);padding:clamp(24px,4vw,36px) 0;border-bottom:1px solid var(--line)}
+  .item{display:grid;grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:clamp(24px,4vw,56px);padding:clamp(24px,4vw,36px) 0;border-bottom:1px solid var(--line)}
   .item:last-child{border-bottom:none}
-  .item-media{align-self:start}
-  .item-media .frame{background:var(--paper-2);border:1px solid var(--line);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:14px}
+  .item-media{align-self:start;position:sticky;top:16px}
+  .item-media .frame{background:var(--paper-2);border:1px solid var(--line);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:6px}
   .item-media .frame img{width:100%;height:100%;object-fit:contain}
   .item-media .cap{margin-top:.6em;font-size:.75rem;color:var(--sub);font-family:"Jost",sans-serif;letter-spacing:.05em}
 
@@ -244,6 +246,8 @@
   .combo-card li::before{content:"";position:absolute;left:0;top:.7em;border-left:6px solid var(--red);border-top:5px solid transparent;border-bottom:5px solid transparent}
   .combo-card .verdict{margin-top:.8em;padding-top:.7em;border-top:1px dashed var(--line-mid);font-size:.92rem}
   .combo-card .verdict b{color:var(--red-deep)}
+  .combo-card li a{color:var(--ink);font-weight:700;text-decoration:none;border-bottom:2px solid var(--red);padding-bottom:1px}
+  .combo-card li a:hover{color:var(--red-deep)}
 
   /* ---------- まとめ ---------- */
   .pick-list{display:grid;gap:.6em}
@@ -262,7 +266,7 @@
   /* ---------- responsive ---------- */
   @media (max-width:860px){
     .item{grid-template-columns:1fr}
-    .item-media{max-width:320px}
+    .item-media{max-width:420px;position:static}
     .pick-row{grid-template-columns:1fr;gap:.15em}
     .cap-row{grid-template-columns:1fr;gap:.15em}
     .cap-row .cr-name{font-size:.82rem}
@@ -278,6 +282,12 @@
 </head>
 <body>
 
+<div class="site-head">
+  <a href="https://www.rakuten.ne.jp/gold/sommelier/index.html" target="_blank" rel="noopener">
+    <img src="images/sommelier-logo.svg" alt="家具のソムリエ">
+  </a>
+</div>
+
 <div class="topbar">
   <a class="topbar-banner" href="https://www.rakuten.ne.jp/gold/sommelier/c/tower/index.html" target="_blank" rel="noopener">
     <img src="https://image.rakuten.co.jp/sommelier/cabinet/kagu_banner_sp1219.jpg" alt="家具のソムリエ" width="1080" height="210">
@@ -289,7 +299,7 @@
 <header class="fv">
   <div class="fv-inner">
     <span class="eyebrow">山崎実業 tower ／ 家具のソムリエ</span>
-    <p class="fv-word en">tower</p>
+    <p class="fv-word"><img src="images/tower-logo.png" alt="tower"></p>
     <p class="fv-kicker">機能は、どれも同じ。</p>
     <h1>選ぶなら、<span class="mark">サイズ感</span>。</h1>
     <p class="fv-lead">
@@ -509,8 +519,8 @@
         <div class="combo-card reveal">
           <h3><span class="tag">スクエア</span>250mL</h3>
           <ul>
-            <li>単品ページ（ymj-00647）… 1個 880円／2個 1,760円を同じページで選択</li>
-            <li>「長方形＋スクエア 2点セット」（ymj-00775）にも、同じスクエアが1個入っています</li>
+            <li><a href="https://item.rakuten.co.jp/sommelier/ymj-00647/" target="_blank" rel="noopener">単品ページ</a>（ymj-00647）… 1個 880円／2個 1,760円を同じページで選択</li>
+            <li>「<a href="https://item.rakuten.co.jp/sommelier/ymj-00775/" target="_blank" rel="noopener">長方形＋スクエア 2点セット</a>」（ymj-00775）にも、同じスクエアが1個入っています</li>
           </ul>
           <p class="verdict">スクエアだけを2個そろえたいときは、単品ページで「2個」を選ぶのがおすすめです。<b>形の違う2個をまとめて</b>ほしいときに、2点セットが便利です。</p>
         </div>
@@ -518,8 +528,8 @@
         <div class="combo-card reveal">
           <h3><span class="tag">長方形</span>400mL</h3>
           <ul>
-            <li>単品ページ（ymj-00311）… 1,100円・送料無料</li>
-            <li>「2点セット」（ymj-00775・1,980円）にも同梱</li>
+            <li><a href="https://item.rakuten.co.jp/sommelier/ymj-00311/" target="_blank" rel="noopener">単品ページ</a>（ymj-00311）… 1,100円・送料無料</li>
+            <li>「<a href="https://item.rakuten.co.jp/sommelier/ymj-00775/" target="_blank" rel="noopener">2点セット</a>」（ymj-00775・1,980円）にも同梱</li>
           </ul>
           <p class="verdict">2点セット1,980円は<b>長方形1,100円＋スクエア880円＝1,980円と同額</b>。価格の得はなく、送料無料ライン（3,980円）対象外なので単品ページより送料条件は不利です。メリットは「形の違う2個を1回でそろえられる」点です。</p>
         </div>
@@ -527,8 +537,8 @@
         <div class="combo-card reveal">
           <h3><span class="tag">おにぎりケース</span>230mL</h3>
           <ul>
-            <li>1個ページ（ymj-01733）… 880円 ＋ 送料550円・ゴムバンドなし</li>
-            <li>2個組ページ（ymj-01735）… 1,650円・送料無料・ゴムバンド付き</li>
+            <li><a href="https://item.rakuten.co.jp/sommelier/ymj-01733/" target="_blank" rel="noopener">1個ページ</a>（ymj-01733）… 880円 ＋ 送料550円・ゴムバンドなし</li>
+            <li><a href="https://item.rakuten.co.jp/sommelier/ymj-01735/" target="_blank" rel="noopener">2個組ページ</a>（ymj-01735）… 1,650円・送料無料・ゴムバンド付き</li>
           </ul>
           <p class="verdict">中身の容器はまったく同じです。<b>2個以上なら2個組ページ</b>がおすすめ（1個あたり825円＋送料無料＋重ねて留めるゴムバンド付き）。1個だけでよいときは単品ページをどうぞ。</p>
         </div>
@@ -536,9 +546,9 @@
         <div class="combo-card reveal">
           <h3><span class="tag">冷凍ごはん対応</span>3ページの関係</h3>
           <ul>
-            <li>セット S（ymj-01485・1,870円）… ごはん容器380mL（ザル280mL）＋おかず容器の2段・正方形コンパクト</li>
-            <li>セット L（ymj-01800・2,310円）… 同じ構成のサイズ違い。ごはん容器530mL・ザル410mLで容量アップ・長方形</li>
-            <li>ザルが入る1段（ymj-01484・1,760円）… 本体は1段750mLの大容量。冷凍ごはん容器の「ザル」は別売で、セットS／Lや「冷凍ごはん容器」単品のザルを差し込んで使う設計です</li>
+            <li><a href="https://item.rakuten.co.jp/sommelier/ymj-01485/" target="_blank" rel="noopener">セット S</a>（ymj-01485・1,870円）… ごはん容器380mL（ザル280mL）＋おかず容器の2段・正方形コンパクト</li>
+            <li><a href="https://item.rakuten.co.jp/sommelier/ymj-01800/" target="_blank" rel="noopener">セット L</a>（ymj-01800・2,310円）… 同じ構成のサイズ違い。ごはん容器530mL・ザル410mLで容量アップ・長方形</li>
+            <li><a href="https://item.rakuten.co.jp/sommelier/ymj-01484/" target="_blank" rel="noopener">ザルが入る1段</a>（ymj-01484・1,760円）… 本体は1段750mLの大容量。冷凍ごはん容器の「ザル」は別売で、セットS／Lや「冷凍ごはん容器」単品のザルを差し込んで使う設計です</li>
           </ul>
           <p class="verdict">冷凍ごはんをまるごと運びたいなら<b>まずはセットS／Lで一式そろえる</b>のがおすすめ。すでにザル付き冷凍ごはん容器を持っている人が、大きめの1段を足したいときに<b>ザルが入る1段</b>を選びます。</p>
         </div>
